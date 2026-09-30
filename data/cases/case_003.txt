@@ -1,0 +1,16 @@
+Case ID: PV-2026-003
+Received: 2026-03-25
+Patient name: Latha Iyer
+Patient: 58 years, female
+Reporter: Ms. Priya Menon, pharmacist
+Suspect drug: Cardiozar 10 mg once daily
+Drug start: 2026-03-01
+Event: Persistent dry cough
+Onset: 2026-03-22
+Seriousness: Not serious
+Action taken: Dose unchanged
+Dechallenge: not done
+Rechallenge: not done
+Outcome: ongoing
+Concomitant: none
+Narrative: Patient reports a nagging cough for a week. No hospitalisation required. Managed in outpatient clinic.

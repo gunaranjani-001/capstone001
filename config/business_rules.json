@@ -1,0 +1,15 @@
+{
+  "_note": "Illustrative rules for a training prototype. Not a substitute for company SOPs or regulatory advice.",
+  "min_data_elements": ["patient", "reporter", "drug", "event"],
+  "missing_values": ["", "unknown", "not provided", "n/a", "na", "none provided", "-"],
+  "reporter_qualifications": ["physician", "doctor", "pharmacist", "nurse", "consumer", "patient", "lawyer", "health professional"],
+  "routes": {
+    "follow_up":        {"days": 5,    "approval": true,  "desc": "Send follow-up request to reporter for missing minimum data elements"},
+    "duplicate_review": {"days": 5,    "approval": true,  "desc": "Possible duplicate: human to confirm merge or new case"},
+    "manual_review":    {"days": 3,    "approval": true,  "desc": "Medical reviewer must assess (uncoded event or data conflict on a fatal case)"},
+    "expedited_7d":     {"days": 7,    "approval": true,  "desc": "Fatal/life-threatening, unlisted, related: expedited report"},
+    "expedited_15d":    {"days": 15,   "approval": true,  "desc": "Serious, unlisted: expedited report"},
+    "periodic_psur":    {"days": null, "approval": true,  "desc": "Serious, listed: include in periodic safety update report"},
+    "routine":          {"days": null, "approval": false, "desc": "Non-serious, listed: routine database entry"}
+  }
+}

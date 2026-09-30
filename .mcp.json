@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "pv-safety-data": {
+      "command": "python3",
+      "args": ["-m", "pvagent.mcp_server"]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+Case ID: PV-2026-005
+Received: 2026-04-10
+Patient name: Hari Prasad
+Patient: 79 years, male
+Reporter: Dr. Neha Shah, physician
+Suspect drug: Glucofine 500 mg twice daily
+Drug start: 2026-03-01
+Event: Lactic acidosis
+Onset: 2026-02-20
+Seriousness: Death
+Action taken: Unknown
+Dechallenge: not applicable
+Rechallenge: not applicable
+Outcome: Fatal
+Concomitant: none
+Narrative: Patient died at home. Onset date predates the recorded drug start; dates being verified with the reporter.

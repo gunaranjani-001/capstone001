@@ -1,0 +1,9 @@
+{
+  "case_001": {"complete": true,  "pt": "Gastrointestinal haemorrhage", "serious": true,  "causality": "Probable",     "route": "periodic_psur",    "injection": false},
+  "case_002": {"complete": true,  "pt": "Stevens-Johnson syndrome",     "serious": true,  "causality": "Probable",     "route": "expedited_7d",     "injection": false},
+  "case_003": {"complete": true,  "pt": "Cough",                        "serious": false, "causality": "Possible",     "route": "routine",          "injection": false},
+  "case_004": {"complete": false, "pt": "Dizziness",                    "serious": false, "causality": "Unassessable", "route": "follow_up",        "injection": false},
+  "case_005": {"complete": true,  "pt": "Lactic acidosis",              "serious": true,  "causality": "Unlikely",     "route": "manual_review",    "injection": false},
+  "case_006": {"complete": true,  "pt": "Gastrointestinal haemorrhage", "serious": true,  "causality": "Probable",     "route": "duplicate_review", "injection": false},
+  "case_007": {"complete": true,  "pt": "Gastrointestinal haemorrhage", "serious": true,  "causality": "Possible",     "route": "periodic_psur",    "injection": true}
+}

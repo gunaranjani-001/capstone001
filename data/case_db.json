@@ -1,0 +1,11 @@
+{
+  "_note": "Synthetic aggregate counts from a mock safety database.",
+  "review_threshold": 10,
+  "pairs": [
+    {"drug": "warfarex",  "pt": "Gastrointestinal haemorrhage", "count": 12},
+    {"drug": "neurocalm", "pt": "Stevens-Johnson syndrome",     "count": 1},
+    {"drug": "cardiozar", "pt": "Cough",                        "count": 40},
+    {"drug": "glucofine", "pt": "Lactic acidosis",              "count": 3},
+    {"drug": "painex",    "pt": "Gastrointestinal haemorrhage", "count": 9}
+  ]
+}

@@ -1,0 +1,16 @@
+Case ID: PV-2026-006
+Received: 2026-04-12
+Patient name: Ravi Kumar
+Patient: 67 years, male
+Reporter: Mr. Arjun Das, pharmacist
+Suspect drug: Warfarex 5 mg
+Drug start: 2026-01-10
+Event: Gastrointestinal bleeding
+Onset: 2026-01-28
+Seriousness: Hospitalised
+Action taken: Drug withdrawn
+Dechallenge: positive
+Rechallenge: not done
+Outcome: recovering
+Concomitant: none
+Narrative: Pharmacy follow-up report describing the same hospital admission for GI bleeding in a warfarex patient.

@@ -1,0 +1,14 @@
+{
+  "_note": "Least-privilege matrix: each sub-agent may only use the skills and MCP tools listed here. Enforced at runtime by guardrail G-P1/G-P2.",
+  "agent_permissions": {
+    "intake_agent":      {"skills": ["detect_prompt_injection", "redact_pii", "parse_case_report"], "tools": []},
+    "coding_agent":      {"skills": ["code_event_meddra"], "tools": ["meddra_lookup"]},
+    "seriousness_agent": {"skills": ["classify_seriousness"], "tools": []},
+    "causality_agent":   {"skills": ["assess_causality"], "tools": ["label_lookup"]},
+    "regulatory_agent":  {"skills": ["screen_duplicates_and_history", "determine_reporting_route"], "tools": ["case_db_search"]},
+    "narrative_agent":   {"skills": ["draft_case_narrative"], "tools": []},
+    "verifier_agent":    {"skills": ["verify_claims"], "tools": []}
+  },
+  "forbidden_absolute_terms": ["definitely caused", "proven", "certainly caused", "confirmed cause", "guaranteed"],
+  "max_replans": 1
+}

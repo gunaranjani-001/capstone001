@@ -1,0 +1,11 @@
+Case ID: PV-2026-004
+Received: 2026-04-02
+Patient name: Unknown caller
+Patient: unknown
+Reporter: unknown
+Suspect drug: unknown
+Event: felt dizzy after taking some pills
+Onset: unknown
+Seriousness: unknown
+Outcome: unknown
+Narrative: Anonymous phone call. Caller hung up before giving details.

@@ -1,0 +1,8 @@
+{
+  "_note": "All drugs are FICTIONAL. Labels are invented for demonstration.",
+  "warfarex":  {"generic": "warfarexin", "class": "Anticoagulant",       "listed_events": ["Gastrointestinal haemorrhage", "Epistaxis", "Rash"]},
+  "cardiozar": {"generic": "zarapril",   "class": "ACE-inhibitor-like",  "listed_events": ["Cough", "Hypotension", "Dizziness", "Angioedema"]},
+  "neurocalm": {"generic": "neurocalmide","class": "Antiepileptic",      "listed_events": ["Somnolence", "Dizziness", "Rash", "Headache"]},
+  "glucofine": {"generic": "glucofinide","class": "Antidiabetic",        "listed_events": ["Nausea", "Diarrhoea", "Lactic acidosis"]},
+  "painex":    {"generic": "painexofen", "class": "NSAID",               "listed_events": ["Dyspepsia", "Nausea", "Gastrointestinal haemorrhage"]}
+}

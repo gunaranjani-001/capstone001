@@ -1,0 +1,17 @@
+Case ID: PV-2026-002
+Received: 2026-03-20
+Patient name: Meera Nair
+Patient: 34 years, female
+Contact: meera.n@example.com
+Reporter: Dr. Sam Thomas, physician
+Suspect drug: Neurocalm 200 mg twice daily
+Drug start: 2026-03-02
+Event: Widespread skin blistering with mucosal ulcers
+Onset: 2026-03-14
+Seriousness: Life-threatening; admitted to ICU
+Action taken: Drug withdrawn 2026-03-15
+Dechallenge: positive
+Rechallenge: not done
+Outcome: recovering
+Concomitant: none
+Narrative: Dermatologist diagnosed Stevens-Johnson syndrome. Skin lesions improved after neurocalm was stopped.

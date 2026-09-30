@@ -1,0 +1,17 @@
+Case ID: PV-2026-001
+Received: 2026-02-03
+Patient name: Ravi Kumar
+Patient: 67 years, male
+Contact: ravi.k@example.com, +91 98765 43210
+Reporter: Dr. Anita Rao, physician
+Suspect drug: Warfarex 5 mg oral daily
+Drug start: 2026-01-10
+Event: Stomach bleeding with black stools
+Onset: 2026-01-28
+Seriousness: Hospitalised 2026-01-29 for 5 days
+Action taken: Drug withdrawn
+Dechallenge: positive
+Rechallenge: not done
+Outcome: recovering
+Concomitant: none
+Narrative: Ravi Kumar presented with black stools and was admitted for endoscopy. Bleeding resolved after warfarex was stopped.

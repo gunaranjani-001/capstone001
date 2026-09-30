@@ -1,0 +1,19 @@
+[
+  {"pt": "Gastrointestinal haemorrhage", "soc": "Gastrointestinal disorders", "ime": false, "synonyms": ["stomach bleeding", "gi bleeding", "gastrointestinal bleeding", "black stools", "vomiting blood", "melaena", "haematemesis", "gi haemorrhage"]},
+  {"pt": "Stevens-Johnson syndrome", "soc": "Skin and subcutaneous tissue disorders", "ime": true, "synonyms": ["stevens-johnson syndrome", "stevens johnson syndrome", "sjs"]},
+  {"pt": "Cough", "soc": "Respiratory, thoracic and mediastinal disorders", "ime": false, "synonyms": ["dry cough", "persistent cough", "cough"]},
+  {"pt": "Dizziness", "soc": "Nervous system disorders", "ime": false, "synonyms": ["dizzy", "dizziness", "lightheaded"]},
+  {"pt": "Lactic acidosis", "soc": "Metabolism and nutrition disorders", "ime": true, "synonyms": ["lactic acidosis"]},
+  {"pt": "Rash", "soc": "Skin and subcutaneous tissue disorders", "ime": false, "synonyms": ["rash", "skin rash"]},
+  {"pt": "Hepatic failure", "soc": "Hepatobiliary disorders", "ime": true, "synonyms": ["liver failure", "hepatic failure", "acute liver injury"]},
+  {"pt": "Angioedema", "soc": "Skin and subcutaneous tissue disorders", "ime": true, "synonyms": ["angioedema", "swelling of lips", "facial swelling"]},
+  {"pt": "Anaphylactic reaction", "soc": "Immune system disorders", "ime": true, "synonyms": ["anaphylaxis", "anaphylactic"]},
+  {"pt": "Acute kidney injury", "soc": "Renal and urinary disorders", "ime": true, "synonyms": ["kidney failure", "acute kidney injury", "renal failure"]},
+  {"pt": "Nausea", "soc": "Gastrointestinal disorders", "ime": false, "synonyms": ["nausea", "feeling sick"]},
+  {"pt": "Diarrhoea", "soc": "Gastrointestinal disorders", "ime": false, "synonyms": ["diarrhoea", "diarrhea", "loose stools"]},
+  {"pt": "Headache", "soc": "Nervous system disorders", "ime": false, "synonyms": ["headache"]},
+  {"pt": "Somnolence", "soc": "Nervous system disorders", "ime": false, "synonyms": ["drowsiness", "sleepy", "somnolence"]},
+  {"pt": "Hypotension", "soc": "Vascular disorders", "ime": false, "synonyms": ["low blood pressure", "hypotension"]},
+  {"pt": "Dyspepsia", "soc": "Gastrointestinal disorders", "ime": false, "synonyms": ["indigestion", "dyspepsia"]},
+  {"pt": "Epistaxis", "soc": "Respiratory, thoracic and mediastinal disorders", "ime": false, "synonyms": ["nosebleed", "epistaxis"]}
+]
