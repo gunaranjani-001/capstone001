@@ -1,0 +1,19 @@
+{
+  "case_id": "PV-2026-001",
+  "action": "periodic_psur",
+  "due": null,
+  "event_pt": "Gastrointestinal haemorrhage",
+  "soc": "Gastrointestinal disorders",
+  "serious_criteria": [
+    "hospitalisation"
+  ],
+  "causality": "Probable",
+  "narrative": "A 67-year-old male was reported by a [NAME], physician [E004]. Suspect drug: Warfarex 5 mg oral daily [E005]. Event: \"Stomach bleeding with black stools\" coded to MedDRA PT Gastrointestinal haemorrhage [E007, E016]. Serious per ICH E2A criteria: hospitalisation [E009, E015]. Causality (WHO-UMC-style): Probable. Basis: Onset 18 day(s) after drug start; Positive dechallenge; Event is listed in the product label [E006, E008, E011, E017]. Proposed route: periodic_psur (R7 serious + listed). This is a proposal for human review, not a regulatory determination.",
+  "approval": {
+    "decision": "approved",
+    "reviewer": "demo-reviewer",
+    "mode": "approve",
+    "comment": "simulated reviewer decision"
+  },
+  "note": "Simulated outbox artefact. No external system is contacted."
+}

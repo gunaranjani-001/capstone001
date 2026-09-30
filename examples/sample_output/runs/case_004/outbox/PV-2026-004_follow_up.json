@@ -1,0 +1,17 @@
+{
+  "case_id": "PV-2026-004",
+  "action": "follow_up",
+  "due": "2026-04-07",
+  "event_pt": "Dizziness",
+  "soc": "Nervous system disorders",
+  "serious_criteria": [],
+  "causality": "Unassessable",
+  "narrative": "A None-year-old patient of unknown sex was reported by a [PATIENT] [E004]. The report is incomplete (missing: patient); no clinical conclusion is drawn. Not assessed as serious on the information provided. Causality (WHO-UMC-style): Unassessable. Basis: Missing minimum data: patient. Proposed route: follow_up (R1 incomplete minimum data), due 2026-04-07. This is a proposal for human review, not a regulatory determination.",
+  "approval": {
+    "decision": "approved",
+    "reviewer": "demo-reviewer",
+    "mode": "approve",
+    "comment": "simulated reviewer decision"
+  },
+  "note": "Simulated outbox artefact. No external system is contacted."
+}

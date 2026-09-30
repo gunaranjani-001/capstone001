@@ -1,0 +1,233 @@
+{
+  "case_id": "PV-2026-003",
+  "status": "COMPLETED",
+  "chain_complete": true,
+  "steps": [
+    {
+      "step": "request",
+      "agent": "supervisor",
+      "skills": [],
+      "tools": [],
+      "evidence": [],
+      "guardrails": [],
+      "kinds": [
+        "request"
+      ],
+      "result": "sha256=fbca44d8f1f4114a"
+    },
+    {
+      "step": "plan",
+      "agent": "supervisor",
+      "skills": [],
+      "tools": [],
+      "evidence": [],
+      "guardrails": [],
+      "kinds": [
+        "plan"
+      ],
+      "result": "steps: intake, coding, seriousness, causality, regulatory, narrative, verify, approval, finalize"
+    },
+    {
+      "step": "intake",
+      "agent": "intake_agent",
+      "skills": [
+        "detect_prompt_injection",
+        "redact_pii",
+        "parse_case_report"
+      ],
+      "tools": [],
+      "evidence": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015"
+      ],
+      "guardrails": [
+        "G-P1:PASS",
+        "G-P1:PASS",
+        "G-D1:PASS",
+        "G-I1:PASS",
+        "G-P1:PASS"
+      ],
+      "kinds": [
+        "agent",
+        "guardrail",
+        "skill"
+      ],
+      "result": "complete=True missing=[]"
+    },
+    {
+      "step": "coding",
+      "agent": "coding_agent",
+      "skills": [
+        "code_event_meddra"
+      ],
+      "tools": [
+        "mcp:meddra_lookup"
+      ],
+      "evidence": [
+        "E007",
+        "E016"
+      ],
+      "guardrails": [
+        "G-P1:PASS",
+        "G-P2:PASS"
+      ],
+      "kinds": [
+        "agent",
+        "guardrail",
+        "skill",
+        "tool"
+      ],
+      "result": "PT=Cough conf=0.85 fallback=False"
+    },
+    {
+      "step": "seriousness",
+      "agent": "seriousness_agent",
+      "skills": [
+        "classify_seriousness"
+      ],
+      "tools": [],
+      "evidence": [],
+      "guardrails": [
+        "G-P1:PASS"
+      ],
+      "kinds": [
+        "agent",
+        "guardrail",
+        "skill"
+      ],
+      "result": "serious=False criteria=[]"
+    },
+    {
+      "step": "causality",
+      "agent": "causality_agent",
+      "skills": [
+        "assess_causality"
+      ],
+      "tools": [
+        "mcp:label_lookup"
+      ],
+      "evidence": [
+        "E006",
+        "E008",
+        "E017"
+      ],
+      "guardrails": [
+        "G-P1:PASS",
+        "G-P2:PASS",
+        "G-C3:PASS",
+        "G-C1:PASS",
+        "G-C2:PASS"
+      ],
+      "kinds": [
+        "agent",
+        "guardrail",
+        "skill",
+        "tool"
+      ],
+      "result": "Possible (proposed Possible) listed=True"
+    },
+    {
+      "step": "regulatory",
+      "agent": "regulatory_agent",
+      "skills": [
+        "screen_duplicates_and_history",
+        "determine_reporting_route"
+      ],
+      "tools": [
+        "mcp:case_db_search"
+      ],
+      "evidence": [
+        "E018"
+      ],
+      "guardrails": [
+        "G-P1:PASS",
+        "G-P2:PASS",
+        "G-P1:PASS"
+      ],
+      "kinds": [
+        "agent",
+        "guardrail",
+        "skill",
+        "tool"
+      ],
+      "result": "route=routine (R8 non-serious + listed)"
+    },
+    {
+      "step": "narrative",
+      "agent": "narrative_agent",
+      "skills": [
+        "draft_case_narrative"
+      ],
+      "tools": [],
+      "evidence": [],
+      "guardrails": [
+        "G-P1:PASS"
+      ],
+      "kinds": [
+        "agent",
+        "guardrail",
+        "skill"
+      ],
+      "result": "491 chars"
+    },
+    {
+      "step": "verify",
+      "agent": "verifier_agent",
+      "skills": [
+        "verify_claims"
+      ],
+      "tools": [],
+      "evidence": [],
+      "guardrails": [
+        "G-P1:PASS"
+      ],
+      "kinds": [
+        "agent",
+        "guardrail",
+        "skill"
+      ],
+      "result": "ok"
+    },
+    {
+      "step": "approval",
+      "agent": "supervisor",
+      "skills": [],
+      "tools": [],
+      "evidence": [],
+      "guardrails": [],
+      "kinds": [
+        "hitl"
+      ],
+      "result": "decision=not_required"
+    },
+    {
+      "step": "finalize",
+      "agent": "supervisor",
+      "skills": [],
+      "tools": [],
+      "evidence": [],
+      "guardrails": [
+        "G-A1:PASS",
+        "G-A2:PASS"
+      ],
+      "kinds": [
+        "action",
+        "guardrail"
+      ],
+      "result": "released=PV-2026-003_routine.json"
+    }
+  ]
+}

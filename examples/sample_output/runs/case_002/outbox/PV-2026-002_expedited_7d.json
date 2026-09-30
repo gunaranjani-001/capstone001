@@ -1,0 +1,21 @@
+{
+  "case_id": "PV-2026-002",
+  "action": "expedited_7d",
+  "due": "2026-03-27",
+  "event_pt": "Stevens-Johnson syndrome",
+  "soc": "Skin and subcutaneous tissue disorders",
+  "serious_criteria": [
+    "life_threatening",
+    "hospitalisation",
+    "important_medical_event"
+  ],
+  "causality": "Probable",
+  "narrative": "A 34-year-old female was reported by a [NAME], physician [E004]. Suspect drug: Neurocalm 200 mg twice daily [E005]. Event: \"Widespread skin blistering with mucosal ulcers\" coded to MedDRA PT Stevens-Johnson syndrome [E007, E018]. Serious per ICH E2A criteria: life_threatening [E009], hospitalisation [E009], important_medical_event [E007, E018]. Causality (WHO-UMC-style): Probable. Basis: Onset 12 day(s) after drug start; Positive dechallenge; Event is NOT listed in the product label [E006, E008, E011, E019]. Proposed route: expedited_7d (R4 fatal/life-threatening + unlisted + related), due 2026-03-27. This is a proposal for human review, not a regulatory determination.",
+  "approval": {
+    "decision": "approved",
+    "reviewer": "demo-reviewer",
+    "mode": "approve",
+    "comment": "simulated reviewer decision"
+  },
+  "note": "Simulated outbox artefact. No external system is contacted."
+}

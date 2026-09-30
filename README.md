@@ -60,6 +60,12 @@ python -m pvagent run data/cases/case_002.txt                    # non-interacti
 ```
 Outputs land in `output/runs/<case>/`: `report.md`, `traceability.md`, `trace.jsonl`, `metrics.json`, `state.json`, and `outbox/` (only if released).
 
+### Saved sample run (observability & traceability evidence)
+[examples/sample_output/](examples/sample_output) holds the artefacts of `make demo` for all 7 cases, committed so they can be inspected without running anything.
+Per case in `runs/<case>/`: `trace.jsonl` + `metrics.json` (observability), `traceability.md` / `traceability.json` (request → plan → agent → skill → tool → evidence → guardrail → approval → output),
+`state.json` (plan, facts, evidence), `report.md`, and `outbox/`. Cross-case memory is `memory.json`.
+Approvals in this sample come from the **simulated reviewer** (`--approval approve`), marked as such inside the files. Regenerate with `make demo` (writes to git-ignored `output/`).
+
 ### Web UI (human review + observability dashboard)
 ```bash
 make serve        # http://127.0.0.1:8000  (PORT/HOST/REVIEWER_TOKEN env vars; see docs/deployment.md)

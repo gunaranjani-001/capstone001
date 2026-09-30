@@ -1,0 +1,407 @@
+{
+  "run_id": "case_002",
+  "case_id": "PV-2026-002",
+  "request_hash": "897a25aa3b11fbe8bf53fedb71c111cf72c5114ef183b3fb0f4df79948806e73",
+  "status": "COMPLETED",
+  "plan": [
+    {
+      "step": "coding_fallback",
+      "status": "done"
+    },
+    {
+      "step": "seriousness",
+      "status": "done"
+    },
+    {
+      "step": "causality",
+      "status": "done"
+    },
+    {
+      "step": "regulatory",
+      "status": "done"
+    },
+    {
+      "step": "narrative",
+      "status": "done"
+    },
+    {
+      "step": "verify",
+      "status": "done"
+    },
+    {
+      "step": "approval",
+      "status": "done"
+    },
+    {
+      "step": "finalize",
+      "status": "done"
+    }
+  ],
+  "plan_history": [
+    {
+      "reason": "initial plan",
+      "steps": [
+        "intake",
+        "coding",
+        "seriousness",
+        "causality",
+        "regulatory",
+        "narrative",
+        "verify",
+        "approval",
+        "finalize"
+      ]
+    },
+    {
+      "reason": "verification found uncoded event",
+      "steps": [
+        "coding_fallback",
+        "seriousness",
+        "causality",
+        "regulatory",
+        "narrative",
+        "verify",
+        "approval",
+        "finalize"
+      ]
+    }
+  ],
+  "facts": {
+    "sanitized_text": "Case ID: PV-2026-002\nReceived: 2026-03-20\nPatient name: [REDACTED]\nPatient: 34 years, female\nContact: [REDACTED]\nReporter: [NAME], physician\nSuspect drug: Neurocalm 200 mg twice daily\nDrug start: 2026-03-02\nEvent: Widespread skin blistering with mucosal ulcers\nOnset: 2026-03-14\nSeriousness: Life-threatening; admitted to ICU\nAction taken: Drug withdrawn 2026-03-15\nDechallenge: positive\nRechallenge: not done\nOutcome: recovering\nConcomitant: none\nNarrative: Dermatologist diagnosed Stevens-Johnson syndrome. Skin lesions improved after neurocalm was stopped.\n",
+    "injection_found": [],
+    "redactions": 3,
+    "evidence_ids": {
+      "case_id": "E001",
+      "received": "E002",
+      "patient": "E003",
+      "reporter": "E004",
+      "drug": "E005",
+      "drug_start": "E006",
+      "event": "E007",
+      "onset": "E008",
+      "seriousness": "E009",
+      "action": "E010",
+      "dechallenge": "E011",
+      "rechallenge": "E012",
+      "outcome": "E013",
+      "concomitant": "E014",
+      "narrative": "E015"
+    },
+    "fields": {
+      "case_id": "PV-2026-002",
+      "received": "2026-03-20",
+      "patient_name": "[REDACTED]",
+      "patient": "34 years, female",
+      "contact": "[REDACTED]",
+      "reporter": "[NAME], physician",
+      "drug": "Neurocalm 200 mg twice daily",
+      "drug_start": "2026-03-02",
+      "event": "Widespread skin blistering with mucosal ulcers",
+      "onset": "2026-03-14",
+      "seriousness": "Life-threatening; admitted to ICU",
+      "action": "Drug withdrawn 2026-03-15",
+      "dechallenge": "positive",
+      "rechallenge": "not done",
+      "outcome": "recovering",
+      "concomitant": "none",
+      "narrative": "Dermatologist diagnosed Stevens-Johnson syndrome. Skin lesions improved after neurocalm was stopped.",
+      "age": 34,
+      "sex": "female"
+    },
+    "complete": true,
+    "missing": [],
+    "coding": {
+      "pt": "Stevens-Johnson syndrome",
+      "soc": "Skin and subcutaneous tissue disorders",
+      "ime": true,
+      "confidence": 0.85,
+      "fallback": true,
+      "evidence": [
+        "E007",
+        "E018"
+      ]
+    },
+    "seriousness": {
+      "serious": true,
+      "criteria": {
+        "life_threatening": [
+          "E009"
+        ],
+        "hospitalisation": [
+          "E009"
+        ],
+        "important_medical_event": [
+          "E007",
+          "E018"
+        ]
+      },
+      "fatal": false,
+      "life_threatening": true,
+      "evidence": [
+        "E007",
+        "E009",
+        "E018"
+      ]
+    },
+    "causality": {
+      "category": "Probable",
+      "proposed": "Probable",
+      "rationale": [
+        "Onset 12 day(s) after drug start",
+        "Positive dechallenge",
+        "Event is NOT listed in the product label"
+      ],
+      "listed": false,
+      "guardrails": [],
+      "evidence": [
+        "E006",
+        "E008",
+        "E011",
+        "E019"
+      ]
+    },
+    "screening": {
+      "fingerprint": "fddc473be59d",
+      "duplicate_of": null,
+      "history": {
+        "drug": "neurocalm",
+        "event": "Stevens-Johnson syndrome",
+        "prior_reports": 1,
+        "above_review_threshold": false
+      },
+      "evidence": [
+        "E020"
+      ]
+    },
+    "route": {
+      "route": "expedited_7d",
+      "rule": "R4 fatal/life-threatening + unlisted + related",
+      "due": "2026-03-27",
+      "requires_approval": true,
+      "desc": "Fatal/life-threatening, unlisted, related: expedited report"
+    },
+    "narrative": {
+      "text": "A 34-year-old female was reported by a [NAME], physician [E004]. Suspect drug: Neurocalm 200 mg twice daily [E005]. Event: \"Widespread skin blistering with mucosal ulcers\" coded to MedDRA PT Stevens-Johnson syndrome [E007, E018]. Serious per ICH E2A criteria: life_threatening [E009], hospitalisation [E009], important_medical_event [E007, E018]. Causality (WHO-UMC-style): Probable. Basis: Onset 12 day(s) after drug start; Positive dechallenge; Event is NOT listed in the product label [E006, E008, E011, E019]. Proposed route: expedited_7d (R4 fatal/life-threatening + unlisted + related), due 2026-03-27. This is a proposal for human review, not a regulatory determination."
+    },
+    "verification": {
+      "ok": true,
+      "issues": []
+    },
+    "approval": {
+      "decision": "approved",
+      "reviewer": "demo-reviewer",
+      "mode": "approve",
+      "comment": "simulated reviewer decision"
+    }
+  },
+  "evidence": {
+    "E001": {
+      "source": "case_report",
+      "ref": "case_id",
+      "text": "PV-2026-002"
+    },
+    "E002": {
+      "source": "case_report",
+      "ref": "received",
+      "text": "2026-03-20"
+    },
+    "E003": {
+      "source": "case_report",
+      "ref": "patient",
+      "text": "34 years, female"
+    },
+    "E004": {
+      "source": "case_report",
+      "ref": "reporter",
+      "text": "[NAME], physician"
+    },
+    "E005": {
+      "source": "case_report",
+      "ref": "drug",
+      "text": "Neurocalm 200 mg twice daily"
+    },
+    "E006": {
+      "source": "case_report",
+      "ref": "drug_start",
+      "text": "2026-03-02"
+    },
+    "E007": {
+      "source": "case_report",
+      "ref": "event",
+      "text": "Widespread skin blistering with mucosal ulcers"
+    },
+    "E008": {
+      "source": "case_report",
+      "ref": "onset",
+      "text": "2026-03-14"
+    },
+    "E009": {
+      "source": "case_report",
+      "ref": "seriousness",
+      "text": "Life-threatening; admitted to ICU"
+    },
+    "E010": {
+      "source": "case_report",
+      "ref": "action",
+      "text": "Drug withdrawn 2026-03-15"
+    },
+    "E011": {
+      "source": "case_report",
+      "ref": "dechallenge",
+      "text": "positive"
+    },
+    "E012": {
+      "source": "case_report",
+      "ref": "rechallenge",
+      "text": "not done"
+    },
+    "E013": {
+      "source": "case_report",
+      "ref": "outcome",
+      "text": "recovering"
+    },
+    "E014": {
+      "source": "case_report",
+      "ref": "concomitant",
+      "text": "none"
+    },
+    "E015": {
+      "source": "case_report",
+      "ref": "narrative",
+      "text": "Dermatologist diagnosed Stevens-Johnson syndrome. Skin lesions improved after neurocalm was stopped."
+    },
+    "E016": {
+      "source": "mcp:meddra_lookup",
+      "ref": "event",
+      "text": "no match"
+    },
+    "E017": {
+      "source": "mcp:label_lookup",
+      "ref": "Neurocalm 200 mg twice daily",
+      "text": "{'found': True, 'drug': 'neurocalm', 'generic': 'neurocalmide', 'class': 'Antiepileptic', 'listed_events': ['Somnolence', 'Dizziness', 'Rash', 'Headache']}"
+    },
+    "E018": {
+      "source": "mcp:meddra_lookup",
+      "ref": "event",
+      "text": "[{'pt': 'Stevens-Johnson syndrome', 'soc': 'Skin and subcutaneous tissue disorders', 'ime': True, 'matched': 'stevens-johnson syndrome', 'confidence': 0.85}]"
+    },
+    "E019": {
+      "source": "mcp:label_lookup",
+      "ref": "Neurocalm 200 mg twice daily",
+      "text": "{'found': True, 'drug': 'neurocalm', 'generic': 'neurocalmide', 'class': 'Antiepileptic', 'listed_events': ['Somnolence', 'Dizziness', 'Rash', 'Headache']}"
+    },
+    "E020": {
+      "source": "mcp:case_db_search",
+      "ref": "history",
+      "text": "{'drug': 'neurocalm', 'event': 'Stevens-Johnson syndrome', 'prior_reports': 1, 'above_review_threshold': False}"
+    }
+  },
+  "events": [
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "request_received",
+      "source": "case_002.txt"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "intake",
+      "agent": "intake_agent",
+      "result": "complete=True missing=[]"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "coding",
+      "agent": "coding_agent",
+      "result": "PT=None conf=0.0 fallback=False"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "seriousness",
+      "agent": "seriousness_agent",
+      "result": "serious=True criteria=['life_threatening', 'hospitalisation']"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "causality",
+      "agent": "causality_agent",
+      "result": "Probable (proposed Probable) listed=None"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "regulatory",
+      "agent": "regulatory_agent",
+      "result": "route=manual_review (R3 event could not be coded)"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "narrative",
+      "agent": "narrative_agent",
+      "result": "556 chars"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "verify",
+      "agent": "verifier_agent",
+      "result": "issues=['uncoded']"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "replan",
+      "reason": "uncoded event"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "coding_fallback",
+      "agent": "coding_agent",
+      "result": "PT=Stevens-Johnson syndrome conf=0.85 fallback=True"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "seriousness",
+      "agent": "seriousness_agent",
+      "result": "serious=True criteria=['life_threatening', 'hospitalisation', 'important_medical_event']"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "causality",
+      "agent": "causality_agent",
+      "result": "Probable (proposed Probable) listed=False"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "regulatory",
+      "agent": "regulatory_agent",
+      "result": "route=expedited_7d (R4 fatal/life-threatening + unlisted + related)"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "narrative",
+      "agent": "narrative_agent",
+      "result": "677 chars"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "verify",
+      "agent": "verifier_agent",
+      "result": "ok"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "finalized",
+      "status": "COMPLETED"
+    }
+  ]
+}

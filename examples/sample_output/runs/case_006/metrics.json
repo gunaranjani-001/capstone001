@@ -1,0 +1,25 @@
+{
+  "run_id": "case_006",
+  "model": "deterministic-rules-v1",
+  "spans": 44,
+  "spans_by_kind": {
+    "request": 1,
+    "plan": 1,
+    "agent": 7,
+    "guardrail": 20,
+    "skill": 10,
+    "tool": 3,
+    "hitl": 1,
+    "action": 1
+  },
+  "tool_calls": {
+    "mcp:meddra_lookup": 1,
+    "mcp:label_lookup": 1,
+    "mcp:case_db_search": 1
+  },
+  "errors": 0,
+  "guardrail_blocks": 0,
+  "agent_latency_ms": 2.59,
+  "tokens_in_est": 420,
+  "tokens_out_est": 938
+}

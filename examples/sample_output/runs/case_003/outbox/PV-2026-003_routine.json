@@ -1,0 +1,17 @@
+{
+  "case_id": "PV-2026-003",
+  "action": "routine",
+  "due": null,
+  "event_pt": "Cough",
+  "soc": "Respiratory, thoracic and mediastinal disorders",
+  "serious_criteria": [],
+  "causality": "Possible",
+  "narrative": "A 58-year-old female was reported by a [NAME], pharmacist [E004]. Suspect drug: Cardiozar 10 mg once daily [E005]. Event: \"Persistent dry cough\" coded to MedDRA PT Cough [E007, E016]. Not assessed as serious on the information provided. Causality (WHO-UMC-style): Possible. Basis: Onset 21 day(s) after drug start; Event is listed in the product label [E006, E008, E017]. Proposed route: routine (R8 non-serious + listed). This is a proposal for human review, not a regulatory determination.",
+  "approval": {
+    "decision": "not_required",
+    "reviewer": null,
+    "mode": "n/a",
+    "comment": "low-risk route"
+  },
+  "note": "Simulated outbox artefact. No external system is contacted."
+}

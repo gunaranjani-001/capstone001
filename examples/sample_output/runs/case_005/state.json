@@ -1,0 +1,339 @@
+{
+  "run_id": "case_005",
+  "case_id": "PV-2026-005",
+  "request_hash": "3df345d7d8523cb128d347d157500a8c0d9748de456381aa562c61a32d392907",
+  "status": "COMPLETED",
+  "plan": [
+    {
+      "step": "intake",
+      "status": "done"
+    },
+    {
+      "step": "coding",
+      "status": "done"
+    },
+    {
+      "step": "seriousness",
+      "status": "done"
+    },
+    {
+      "step": "causality",
+      "status": "done"
+    },
+    {
+      "step": "regulatory",
+      "status": "done"
+    },
+    {
+      "step": "narrative",
+      "status": "done"
+    },
+    {
+      "step": "verify",
+      "status": "done"
+    },
+    {
+      "step": "approval",
+      "status": "done"
+    },
+    {
+      "step": "finalize",
+      "status": "done"
+    }
+  ],
+  "plan_history": [
+    {
+      "reason": "initial plan",
+      "steps": [
+        "intake",
+        "coding",
+        "seriousness",
+        "causality",
+        "regulatory",
+        "narrative",
+        "verify",
+        "approval",
+        "finalize"
+      ]
+    }
+  ],
+  "facts": {
+    "sanitized_text": "Case ID: PV-2026-005\nReceived: 2026-04-10\nPatient name: [REDACTED]\nPatient: 79 years, male\nReporter: [NAME], physician\nSuspect drug: Glucofine 500 mg twice daily\nDrug start: 2026-03-01\nEvent: Lactic acidosis\nOnset: 2026-02-20\nSeriousness: Death\nAction taken: Unknown\nDechallenge: not applicable\nRechallenge: not applicable\nOutcome: Fatal\nConcomitant: none\nNarrative: Patient died at home. Onset date predates the recorded drug start; dates being verified with the reporter.\n",
+    "injection_found": [],
+    "redactions": 2,
+    "evidence_ids": {
+      "case_id": "E001",
+      "received": "E002",
+      "patient": "E003",
+      "reporter": "E004",
+      "drug": "E005",
+      "drug_start": "E006",
+      "event": "E007",
+      "onset": "E008",
+      "seriousness": "E009",
+      "action": "E010",
+      "dechallenge": "E011",
+      "rechallenge": "E012",
+      "outcome": "E013",
+      "concomitant": "E014",
+      "narrative": "E015"
+    },
+    "fields": {
+      "case_id": "PV-2026-005",
+      "received": "2026-04-10",
+      "patient_name": "[REDACTED]",
+      "patient": "79 years, male",
+      "reporter": "[NAME], physician",
+      "drug": "Glucofine 500 mg twice daily",
+      "drug_start": "2026-03-01",
+      "event": "Lactic acidosis",
+      "onset": "2026-02-20",
+      "seriousness": "Death",
+      "action": "Unknown",
+      "dechallenge": "not applicable",
+      "rechallenge": "not applicable",
+      "outcome": "Fatal",
+      "concomitant": "none",
+      "narrative": "Patient died at home. Onset date predates the recorded drug start; dates being verified with the reporter.",
+      "age": 79,
+      "sex": "male"
+    },
+    "complete": true,
+    "missing": [],
+    "coding": {
+      "pt": "Lactic acidosis",
+      "soc": "Metabolism and nutrition disorders",
+      "ime": true,
+      "confidence": 1.0,
+      "fallback": false,
+      "evidence": [
+        "E007",
+        "E016"
+      ]
+    },
+    "seriousness": {
+      "serious": true,
+      "criteria": {
+        "death": [
+          "E009",
+          "E013",
+          "E015"
+        ],
+        "important_medical_event": [
+          "E007",
+          "E016"
+        ]
+      },
+      "fatal": true,
+      "life_threatening": false,
+      "evidence": [
+        "E007",
+        "E009",
+        "E013",
+        "E015",
+        "E016"
+      ]
+    },
+    "causality": {
+      "category": "Unlikely",
+      "proposed": "Unlikely",
+      "rationale": [
+        "Onset 9 day(s) BEFORE drug start (temporally implausible)",
+        "Event is listed in the product label"
+      ],
+      "listed": true,
+      "guardrails": [],
+      "evidence": [
+        "E006",
+        "E008",
+        "E017"
+      ]
+    },
+    "screening": {
+      "fingerprint": "2ae2a0c55b81",
+      "duplicate_of": null,
+      "history": {
+        "drug": "glucofine",
+        "event": "Lactic acidosis",
+        "prior_reports": 3,
+        "above_review_threshold": false
+      },
+      "evidence": [
+        "E018"
+      ]
+    },
+    "route": {
+      "route": "manual_review",
+      "rule": "R6 fatal case with weak/conflicting causality data",
+      "due": "2026-04-13",
+      "requires_approval": true,
+      "desc": "Medical reviewer must assess (uncoded event or data conflict on a fatal case)"
+    },
+    "narrative": {
+      "text": "A 79-year-old male was reported by a [NAME], physician [E004]. Suspect drug: Glucofine 500 mg twice daily [E005]. Event: \"Lactic acidosis\" coded to MedDRA PT Lactic acidosis [E007, E016]. Serious per ICH E2A criteria: death [E009, E013, E015], important_medical_event [E007, E016]. Causality (WHO-UMC-style): Unlikely. Basis: Onset 9 day(s) BEFORE drug start (temporally implausible); Event is listed in the product label [E006, E008, E017]. Proposed route: manual_review (R6 fatal case with weak/conflicting causality data), due 2026-04-13. This is a proposal for human review, not a regulatory determination."
+    },
+    "verification": {
+      "ok": true,
+      "issues": []
+    },
+    "approval": {
+      "decision": "approved",
+      "reviewer": "demo-reviewer",
+      "mode": "approve",
+      "comment": "simulated reviewer decision"
+    }
+  },
+  "evidence": {
+    "E001": {
+      "source": "case_report",
+      "ref": "case_id",
+      "text": "PV-2026-005"
+    },
+    "E002": {
+      "source": "case_report",
+      "ref": "received",
+      "text": "2026-04-10"
+    },
+    "E003": {
+      "source": "case_report",
+      "ref": "patient",
+      "text": "79 years, male"
+    },
+    "E004": {
+      "source": "case_report",
+      "ref": "reporter",
+      "text": "[NAME], physician"
+    },
+    "E005": {
+      "source": "case_report",
+      "ref": "drug",
+      "text": "Glucofine 500 mg twice daily"
+    },
+    "E006": {
+      "source": "case_report",
+      "ref": "drug_start",
+      "text": "2026-03-01"
+    },
+    "E007": {
+      "source": "case_report",
+      "ref": "event",
+      "text": "Lactic acidosis"
+    },
+    "E008": {
+      "source": "case_report",
+      "ref": "onset",
+      "text": "2026-02-20"
+    },
+    "E009": {
+      "source": "case_report",
+      "ref": "seriousness",
+      "text": "Death"
+    },
+    "E010": {
+      "source": "case_report",
+      "ref": "action",
+      "text": "Unknown"
+    },
+    "E011": {
+      "source": "case_report",
+      "ref": "dechallenge",
+      "text": "not applicable"
+    },
+    "E012": {
+      "source": "case_report",
+      "ref": "rechallenge",
+      "text": "not applicable"
+    },
+    "E013": {
+      "source": "case_report",
+      "ref": "outcome",
+      "text": "Fatal"
+    },
+    "E014": {
+      "source": "case_report",
+      "ref": "concomitant",
+      "text": "none"
+    },
+    "E015": {
+      "source": "case_report",
+      "ref": "narrative",
+      "text": "Patient died at home. Onset date predates the recorded drug start; dates being verified with the reporter."
+    },
+    "E016": {
+      "source": "mcp:meddra_lookup",
+      "ref": "event",
+      "text": "[{'pt': 'Lactic acidosis', 'soc': 'Metabolism and nutrition disorders', 'ime': True, 'matched': 'lactic acidosis', 'confidence': 1.0}]"
+    },
+    "E017": {
+      "source": "mcp:label_lookup",
+      "ref": "Glucofine 500 mg twice daily",
+      "text": "{'found': True, 'drug': 'glucofine', 'generic': 'glucofinide', 'class': 'Antidiabetic', 'listed_events': ['Nausea', 'Diarrhoea', 'Lactic acidosis']}"
+    },
+    "E018": {
+      "source": "mcp:case_db_search",
+      "ref": "history",
+      "text": "{'drug': 'glucofine', 'event': 'Lactic acidosis', 'prior_reports': 3, 'above_review_threshold': False}"
+    }
+  },
+  "events": [
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "request_received",
+      "source": "case_005.txt"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "intake",
+      "agent": "intake_agent",
+      "result": "complete=True missing=[]"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "coding",
+      "agent": "coding_agent",
+      "result": "PT=Lactic acidosis conf=1.0 fallback=False"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "seriousness",
+      "agent": "seriousness_agent",
+      "result": "serious=True criteria=['death', 'important_medical_event']"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "causality",
+      "agent": "causality_agent",
+      "result": "Unlikely (proposed Unlikely) listed=True"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "regulatory",
+      "agent": "regulatory_agent",
+      "result": "route=manual_review (R6 fatal case with weak/conflicting causality data)"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "narrative",
+      "agent": "narrative_agent",
+      "result": "610 chars"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "verify",
+      "agent": "verifier_agent",
+      "result": "ok"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "finalized",
+      "status": "COMPLETED"
+    }
+  ]
+}

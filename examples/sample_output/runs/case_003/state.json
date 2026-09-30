@@ -1,0 +1,323 @@
+{
+  "run_id": "case_003",
+  "case_id": "PV-2026-003",
+  "request_hash": "fbca44d8f1f4114ab35e9673ca40fa88d446440da2e6d126396d8694237311ed",
+  "status": "COMPLETED",
+  "plan": [
+    {
+      "step": "intake",
+      "status": "done"
+    },
+    {
+      "step": "coding",
+      "status": "done"
+    },
+    {
+      "step": "seriousness",
+      "status": "done"
+    },
+    {
+      "step": "causality",
+      "status": "done"
+    },
+    {
+      "step": "regulatory",
+      "status": "done"
+    },
+    {
+      "step": "narrative",
+      "status": "done"
+    },
+    {
+      "step": "verify",
+      "status": "done"
+    },
+    {
+      "step": "approval",
+      "status": "done"
+    },
+    {
+      "step": "finalize",
+      "status": "done"
+    }
+  ],
+  "plan_history": [
+    {
+      "reason": "initial plan",
+      "steps": [
+        "intake",
+        "coding",
+        "seriousness",
+        "causality",
+        "regulatory",
+        "narrative",
+        "verify",
+        "approval",
+        "finalize"
+      ]
+    }
+  ],
+  "facts": {
+    "sanitized_text": "Case ID: PV-2026-003\nReceived: 2026-03-25\nPatient name: [REDACTED]\nPatient: 58 years, female\nReporter: [NAME], pharmacist\nSuspect drug: Cardiozar 10 mg once daily\nDrug start: 2026-03-01\nEvent: Persistent dry cough\nOnset: 2026-03-22\nSeriousness: Not serious\nAction taken: Dose unchanged\nDechallenge: not done\nRechallenge: not done\nOutcome: ongoing\nConcomitant: none\nNarrative: Patient reports a nagging cough for a week. No hospitalisation required. Managed in outpatient clinic.\n",
+    "injection_found": [],
+    "redactions": 2,
+    "evidence_ids": {
+      "case_id": "E001",
+      "received": "E002",
+      "patient": "E003",
+      "reporter": "E004",
+      "drug": "E005",
+      "drug_start": "E006",
+      "event": "E007",
+      "onset": "E008",
+      "seriousness": "E009",
+      "action": "E010",
+      "dechallenge": "E011",
+      "rechallenge": "E012",
+      "outcome": "E013",
+      "concomitant": "E014",
+      "narrative": "E015"
+    },
+    "fields": {
+      "case_id": "PV-2026-003",
+      "received": "2026-03-25",
+      "patient_name": "[REDACTED]",
+      "patient": "58 years, female",
+      "reporter": "[NAME], pharmacist",
+      "drug": "Cardiozar 10 mg once daily",
+      "drug_start": "2026-03-01",
+      "event": "Persistent dry cough",
+      "onset": "2026-03-22",
+      "seriousness": "Not serious",
+      "action": "Dose unchanged",
+      "dechallenge": "not done",
+      "rechallenge": "not done",
+      "outcome": "ongoing",
+      "concomitant": "none",
+      "narrative": "Patient reports a nagging cough for a week. No hospitalisation required. Managed in outpatient clinic.",
+      "age": 58,
+      "sex": "female"
+    },
+    "complete": true,
+    "missing": [],
+    "coding": {
+      "pt": "Cough",
+      "soc": "Respiratory, thoracic and mediastinal disorders",
+      "ime": false,
+      "confidence": 0.85,
+      "fallback": false,
+      "evidence": [
+        "E007",
+        "E016"
+      ]
+    },
+    "seriousness": {
+      "serious": false,
+      "criteria": {},
+      "fatal": false,
+      "life_threatening": false,
+      "evidence": []
+    },
+    "causality": {
+      "category": "Possible",
+      "proposed": "Possible",
+      "rationale": [
+        "Onset 21 day(s) after drug start",
+        "Event is listed in the product label"
+      ],
+      "listed": true,
+      "guardrails": [],
+      "evidence": [
+        "E006",
+        "E008",
+        "E017"
+      ]
+    },
+    "screening": {
+      "fingerprint": "75f5b2858eff",
+      "duplicate_of": null,
+      "history": {
+        "drug": "cardiozar",
+        "event": "Cough",
+        "prior_reports": 40,
+        "above_review_threshold": true
+      },
+      "evidence": [
+        "E018"
+      ]
+    },
+    "route": {
+      "route": "routine",
+      "rule": "R8 non-serious + listed",
+      "due": null,
+      "requires_approval": false,
+      "desc": "Non-serious, listed: routine database entry"
+    },
+    "narrative": {
+      "text": "A 58-year-old female was reported by a [NAME], pharmacist [E004]. Suspect drug: Cardiozar 10 mg once daily [E005]. Event: \"Persistent dry cough\" coded to MedDRA PT Cough [E007, E016]. Not assessed as serious on the information provided. Causality (WHO-UMC-style): Possible. Basis: Onset 21 day(s) after drug start; Event is listed in the product label [E006, E008, E017]. Proposed route: routine (R8 non-serious + listed). This is a proposal for human review, not a regulatory determination."
+    },
+    "verification": {
+      "ok": true,
+      "issues": []
+    },
+    "approval": {
+      "decision": "not_required",
+      "reviewer": null,
+      "mode": "n/a",
+      "comment": "low-risk route"
+    }
+  },
+  "evidence": {
+    "E001": {
+      "source": "case_report",
+      "ref": "case_id",
+      "text": "PV-2026-003"
+    },
+    "E002": {
+      "source": "case_report",
+      "ref": "received",
+      "text": "2026-03-25"
+    },
+    "E003": {
+      "source": "case_report",
+      "ref": "patient",
+      "text": "58 years, female"
+    },
+    "E004": {
+      "source": "case_report",
+      "ref": "reporter",
+      "text": "[NAME], pharmacist"
+    },
+    "E005": {
+      "source": "case_report",
+      "ref": "drug",
+      "text": "Cardiozar 10 mg once daily"
+    },
+    "E006": {
+      "source": "case_report",
+      "ref": "drug_start",
+      "text": "2026-03-01"
+    },
+    "E007": {
+      "source": "case_report",
+      "ref": "event",
+      "text": "Persistent dry cough"
+    },
+    "E008": {
+      "source": "case_report",
+      "ref": "onset",
+      "text": "2026-03-22"
+    },
+    "E009": {
+      "source": "case_report",
+      "ref": "seriousness",
+      "text": "Not serious"
+    },
+    "E010": {
+      "source": "case_report",
+      "ref": "action",
+      "text": "Dose unchanged"
+    },
+    "E011": {
+      "source": "case_report",
+      "ref": "dechallenge",
+      "text": "not done"
+    },
+    "E012": {
+      "source": "case_report",
+      "ref": "rechallenge",
+      "text": "not done"
+    },
+    "E013": {
+      "source": "case_report",
+      "ref": "outcome",
+      "text": "ongoing"
+    },
+    "E014": {
+      "source": "case_report",
+      "ref": "concomitant",
+      "text": "none"
+    },
+    "E015": {
+      "source": "case_report",
+      "ref": "narrative",
+      "text": "Patient reports a nagging cough for a week. No hospitalisation required. Managed in outpatient clinic."
+    },
+    "E016": {
+      "source": "mcp:meddra_lookup",
+      "ref": "event",
+      "text": "[{'pt': 'Cough', 'soc': 'Respiratory, thoracic and mediastinal disorders', 'ime': False, 'matched': 'dry cough', 'confidence': 0.85}]"
+    },
+    "E017": {
+      "source": "mcp:label_lookup",
+      "ref": "Cardiozar 10 mg once daily",
+      "text": "{'found': True, 'drug': 'cardiozar', 'generic': 'zarapril', 'class': 'ACE-inhibitor-like', 'listed_events': ['Cough', 'Hypotension', 'Dizziness', 'Angioedema']}"
+    },
+    "E018": {
+      "source": "mcp:case_db_search",
+      "ref": "history",
+      "text": "{'drug': 'cardiozar', 'event': 'Cough', 'prior_reports': 40, 'above_review_threshold': True}"
+    }
+  },
+  "events": [
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "request_received",
+      "source": "case_003.txt"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "intake",
+      "agent": "intake_agent",
+      "result": "complete=True missing=[]"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "coding",
+      "agent": "coding_agent",
+      "result": "PT=Cough conf=0.85 fallback=False"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "seriousness",
+      "agent": "seriousness_agent",
+      "result": "serious=False criteria=[]"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "causality",
+      "agent": "causality_agent",
+      "result": "Possible (proposed Possible) listed=True"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "regulatory",
+      "agent": "regulatory_agent",
+      "result": "route=routine (R8 non-serious + listed)"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "narrative",
+      "agent": "narrative_agent",
+      "result": "491 chars"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "verify",
+      "agent": "verifier_agent",
+      "result": "ok"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "finalized",
+      "status": "COMPLETED"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "case_id": "PV-2026-005",
+  "action": "manual_review",
+  "due": "2026-04-13",
+  "event_pt": "Lactic acidosis",
+  "soc": "Metabolism and nutrition disorders",
+  "serious_criteria": [
+    "death",
+    "important_medical_event"
+  ],
+  "causality": "Unlikely",
+  "narrative": "A 79-year-old male was reported by a [NAME], physician [E004]. Suspect drug: Glucofine 500 mg twice daily [E005]. Event: \"Lactic acidosis\" coded to MedDRA PT Lactic acidosis [E007, E016]. Serious per ICH E2A criteria: death [E009, E013, E015], important_medical_event [E007, E016]. Causality (WHO-UMC-style): Unlikely. Basis: Onset 9 day(s) BEFORE drug start (temporally implausible); Event is listed in the product label [E006, E008, E017]. Proposed route: manual_review (R6 fatal case with weak/conflicting causality data), due 2026-04-13. This is a proposal for human review, not a regulatory determination.",
+  "approval": {
+    "decision": "approved",
+    "reviewer": "demo-reviewer",
+    "mode": "approve",
+    "comment": "simulated reviewer decision"
+  },
+  "note": "Simulated outbox artefact. No external system is contacted."
+}

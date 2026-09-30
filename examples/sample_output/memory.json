@@ -1,0 +1,23 @@
+{
+  "fingerprints": {
+    "3ac307f0dd88": {
+      "first_case": "PV-2026-001"
+    },
+    "fddc473be59d": {
+      "first_case": "PV-2026-002"
+    },
+    "75f5b2858eff": {
+      "first_case": "PV-2026-003"
+    },
+    "86363029850d": {
+      "first_case": "PV-2026-004"
+    },
+    "2ae2a0c55b81": {
+      "first_case": "PV-2026-005"
+    },
+    "25507c9202b9": {
+      "first_case": "PV-2026-007"
+    }
+  },
+  "cases_processed": 7
+}

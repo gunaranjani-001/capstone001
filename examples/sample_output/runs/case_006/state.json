@@ -1,0 +1,333 @@
+{
+  "run_id": "case_006",
+  "case_id": "PV-2026-006",
+  "request_hash": "7ebd86adb363d353ce939bd9a7b1c6557cfe404b5c76caf130d222b355f8070c",
+  "status": "COMPLETED",
+  "plan": [
+    {
+      "step": "intake",
+      "status": "done"
+    },
+    {
+      "step": "coding",
+      "status": "done"
+    },
+    {
+      "step": "seriousness",
+      "status": "done"
+    },
+    {
+      "step": "causality",
+      "status": "done"
+    },
+    {
+      "step": "regulatory",
+      "status": "done"
+    },
+    {
+      "step": "narrative",
+      "status": "done"
+    },
+    {
+      "step": "verify",
+      "status": "done"
+    },
+    {
+      "step": "approval",
+      "status": "done"
+    },
+    {
+      "step": "finalize",
+      "status": "done"
+    }
+  ],
+  "plan_history": [
+    {
+      "reason": "initial plan",
+      "steps": [
+        "intake",
+        "coding",
+        "seriousness",
+        "causality",
+        "regulatory",
+        "narrative",
+        "verify",
+        "approval",
+        "finalize"
+      ]
+    }
+  ],
+  "facts": {
+    "sanitized_text": "Case ID: PV-2026-006\nReceived: 2026-04-12\nPatient name: [REDACTED]\nPatient: 67 years, male\nReporter: [NAME], pharmacist\nSuspect drug: Warfarex 5 mg\nDrug start: 2026-01-10\nEvent: Gastrointestinal bleeding\nOnset: 2026-01-28\nSeriousness: Hospitalised\nAction taken: Drug withdrawn\nDechallenge: positive\nRechallenge: not done\nOutcome: recovering\nConcomitant: none\nNarrative: Pharmacy follow-up report describing the same hospital admission for GI bleeding in a warfarex patient.\n",
+    "injection_found": [],
+    "redactions": 2,
+    "evidence_ids": {
+      "case_id": "E001",
+      "received": "E002",
+      "patient": "E003",
+      "reporter": "E004",
+      "drug": "E005",
+      "drug_start": "E006",
+      "event": "E007",
+      "onset": "E008",
+      "seriousness": "E009",
+      "action": "E010",
+      "dechallenge": "E011",
+      "rechallenge": "E012",
+      "outcome": "E013",
+      "concomitant": "E014",
+      "narrative": "E015"
+    },
+    "fields": {
+      "case_id": "PV-2026-006",
+      "received": "2026-04-12",
+      "patient_name": "[REDACTED]",
+      "patient": "67 years, male",
+      "reporter": "[NAME], pharmacist",
+      "drug": "Warfarex 5 mg",
+      "drug_start": "2026-01-10",
+      "event": "Gastrointestinal bleeding",
+      "onset": "2026-01-28",
+      "seriousness": "Hospitalised",
+      "action": "Drug withdrawn",
+      "dechallenge": "positive",
+      "rechallenge": "not done",
+      "outcome": "recovering",
+      "concomitant": "none",
+      "narrative": "Pharmacy follow-up report describing the same hospital admission for GI bleeding in a warfarex patient.",
+      "age": 67,
+      "sex": "male"
+    },
+    "complete": true,
+    "missing": [],
+    "coding": {
+      "pt": "Gastrointestinal haemorrhage",
+      "soc": "Gastrointestinal disorders",
+      "ime": false,
+      "confidence": 1.0,
+      "fallback": false,
+      "evidence": [
+        "E007",
+        "E016"
+      ]
+    },
+    "seriousness": {
+      "serious": true,
+      "criteria": {
+        "hospitalisation": [
+          "E009",
+          "E015"
+        ]
+      },
+      "fatal": false,
+      "life_threatening": false,
+      "evidence": [
+        "E009",
+        "E015"
+      ]
+    },
+    "causality": {
+      "category": "Probable",
+      "proposed": "Probable",
+      "rationale": [
+        "Onset 18 day(s) after drug start",
+        "Positive dechallenge",
+        "Event is listed in the product label"
+      ],
+      "listed": true,
+      "guardrails": [],
+      "evidence": [
+        "E006",
+        "E008",
+        "E011",
+        "E017"
+      ]
+    },
+    "screening": {
+      "fingerprint": "3ac307f0dd88",
+      "duplicate_of": "PV-2026-001",
+      "history": {
+        "drug": "warfarex",
+        "event": "Gastrointestinal haemorrhage",
+        "prior_reports": 12,
+        "above_review_threshold": true
+      },
+      "evidence": [
+        "E018"
+      ]
+    },
+    "route": {
+      "route": "duplicate_review",
+      "rule": "R2 fingerprint matches earlier case",
+      "due": "2026-04-17",
+      "requires_approval": true,
+      "desc": "Possible duplicate: human to confirm merge or new case"
+    },
+    "narrative": {
+      "text": "A 67-year-old male was reported by a [NAME], pharmacist [E004]. Suspect drug: Warfarex 5 mg [E005]. Event: \"Gastrointestinal bleeding\" coded to MedDRA PT Gastrointestinal haemorrhage [E007, E016]. Serious per ICH E2A criteria: hospitalisation [E009, E015]. Causality (WHO-UMC-style): Probable. Basis: Onset 18 day(s) after drug start; Positive dechallenge; Event is listed in the product label [E006, E008, E011, E017]. Proposed route: duplicate_review (R2 fingerprint matches earlier case), due 2026-04-17. This is a proposal for human review, not a regulatory determination."
+    },
+    "verification": {
+      "ok": true,
+      "issues": []
+    },
+    "approval": {
+      "decision": "approved",
+      "reviewer": "demo-reviewer",
+      "mode": "approve",
+      "comment": "simulated reviewer decision"
+    }
+  },
+  "evidence": {
+    "E001": {
+      "source": "case_report",
+      "ref": "case_id",
+      "text": "PV-2026-006"
+    },
+    "E002": {
+      "source": "case_report",
+      "ref": "received",
+      "text": "2026-04-12"
+    },
+    "E003": {
+      "source": "case_report",
+      "ref": "patient",
+      "text": "67 years, male"
+    },
+    "E004": {
+      "source": "case_report",
+      "ref": "reporter",
+      "text": "[NAME], pharmacist"
+    },
+    "E005": {
+      "source": "case_report",
+      "ref": "drug",
+      "text": "Warfarex 5 mg"
+    },
+    "E006": {
+      "source": "case_report",
+      "ref": "drug_start",
+      "text": "2026-01-10"
+    },
+    "E007": {
+      "source": "case_report",
+      "ref": "event",
+      "text": "Gastrointestinal bleeding"
+    },
+    "E008": {
+      "source": "case_report",
+      "ref": "onset",
+      "text": "2026-01-28"
+    },
+    "E009": {
+      "source": "case_report",
+      "ref": "seriousness",
+      "text": "Hospitalised"
+    },
+    "E010": {
+      "source": "case_report",
+      "ref": "action",
+      "text": "Drug withdrawn"
+    },
+    "E011": {
+      "source": "case_report",
+      "ref": "dechallenge",
+      "text": "positive"
+    },
+    "E012": {
+      "source": "case_report",
+      "ref": "rechallenge",
+      "text": "not done"
+    },
+    "E013": {
+      "source": "case_report",
+      "ref": "outcome",
+      "text": "recovering"
+    },
+    "E014": {
+      "source": "case_report",
+      "ref": "concomitant",
+      "text": "none"
+    },
+    "E015": {
+      "source": "case_report",
+      "ref": "narrative",
+      "text": "Pharmacy follow-up report describing the same hospital admission for GI bleeding in a warfarex patient."
+    },
+    "E016": {
+      "source": "mcp:meddra_lookup",
+      "ref": "event",
+      "text": "[{'pt': 'Gastrointestinal haemorrhage', 'soc': 'Gastrointestinal disorders', 'ime': False, 'matched': 'gastrointestinal bleeding', 'confidence': 1.0}]"
+    },
+    "E017": {
+      "source": "mcp:label_lookup",
+      "ref": "Warfarex 5 mg",
+      "text": "{'found': True, 'drug': 'warfarex', 'generic': 'warfarexin', 'class': 'Anticoagulant', 'listed_events': ['Gastrointestinal haemorrhage', 'Epistaxis', 'Rash']}"
+    },
+    "E018": {
+      "source": "mcp:case_db_search",
+      "ref": "history",
+      "text": "{'drug': 'warfarex', 'event': 'Gastrointestinal haemorrhage', 'prior_reports': 12, 'above_review_threshold': True}"
+    }
+  },
+  "events": [
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "request_received",
+      "source": "case_006.txt"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "intake",
+      "agent": "intake_agent",
+      "result": "complete=True missing=[]"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "coding",
+      "agent": "coding_agent",
+      "result": "PT=Gastrointestinal haemorrhage conf=1.0 fallback=False"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "seriousness",
+      "agent": "seriousness_agent",
+      "result": "serious=True criteria=['hospitalisation']"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "causality",
+      "agent": "causality_agent",
+      "result": "Probable (proposed Probable) listed=True"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "regulatory",
+      "agent": "regulatory_agent",
+      "result": "route=duplicate_review (R2 fingerprint matches earlier case)"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "narrative",
+      "agent": "narrative_agent",
+      "result": "576 chars"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "step_done",
+      "step": "verify",
+      "agent": "verifier_agent",
+      "result": "ok"
+    },
+    {
+      "ts": "2026-09-30T12:17:27+00:00",
+      "event": "finalized",
+      "status": "COMPLETED"
+    }
+  ]
+}
