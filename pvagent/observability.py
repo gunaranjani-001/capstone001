@@ -71,3 +71,38 @@ class Tracer:
             for s in self.spans:
                 f.write(json.dumps(s, default=str) + "\n")
         (out_dir / "metrics.json").write_text(json.dumps(self.metrics(), indent=2), encoding="utf-8")
+
+
+def _p95(values):
+    values = sorted(values)
+    return values[min(len(values) - 1, int(0.95 * len(values)))] if values else 0
+
+
+def aggregate(runs_root):
+    """Fleet-level observability over every finished run under `runs_root` (used by the dashboard)."""
+    from collections import Counter
+    from pathlib import Path
+    status, routes, tools, lat = Counter(), Counter(), Counter(), {}
+    tot = {"runs": 0, "spans": 0, "errors": 0, "guardrail_blocks": 0, "tokens_in_est": 0, "tokens_out_est": 0}
+    for d in sorted(Path(runs_root).glob("*")):
+        files = [d / n for n in ("metrics.json", "state.json", "trace.jsonl")]
+        if not all(f.exists() for f in files):
+            continue
+        m = json.loads(files[0].read_text())
+        st = json.loads(files[1].read_text())
+        tot["runs"] += 1
+        for k in ("spans", "errors", "guardrail_blocks", "tokens_in_est", "tokens_out_est"):
+            tot[k] += m[k]
+        status[st["status"]] += 1
+        routes[st["facts"]["route"]["route"]] += 1
+        tools.update(m["tool_calls"])
+        for line in files[2].read_text().splitlines():
+            s = json.loads(line)
+            if s["kind"] in ("agent", "tool", "skill"):
+                row = lat.setdefault((s["kind"], s["name"]), {"ms": [], "errors": 0})
+                row["ms"].append(s["latency_ms"])
+                row["errors"] += s["status"] == "error"
+    table = [{"kind": k, "name": n, "calls": len(v["ms"]), "avg_ms": round(sum(v["ms"]) / len(v["ms"]), 2),
+              "p95_ms": round(_p95(v["ms"]), 2), "max_ms": round(max(v["ms"]), 2), "errors": v["errors"]}
+             for (k, n), v in sorted(lat.items())]
+    return {"totals": tot, "status": dict(status), "routes": dict(routes), "tool_calls": dict(tools), "latency": table}

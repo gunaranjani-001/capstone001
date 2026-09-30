@@ -28,8 +28,17 @@ def main(argv=None):
         s.add_argument("--reviewer", default="unassigned")
         s.add_argument("--out", type=Path, default=ROOT / "output")
     sub.add_parser("eval", help="run the evaluation suite")
+    sv = sub.add_parser("serve", help="start the web UI (human review + observability dashboard)")
+    sv.add_argument("--host", default=None)
+    sv.add_argument("--port", type=int, default=None)
     args = p.parse_args(argv)
 
+    if args.cmd == "serve":
+        from .web import serve
+        try:
+            serve(args.host, args.port).serve_forever()
+        except KeyboardInterrupt:
+            return 0
     if args.cmd == "eval":
         from eval.run_eval import main as eval_main
         return eval_main()

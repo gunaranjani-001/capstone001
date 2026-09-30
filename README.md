@@ -43,10 +43,11 @@ Flow: understand → plan → delegate → use skills → call MCP tools → ver
 | 6 | State / context / memory | per-run [state.py](pvagent/state.py) `state.json`; cross-case duplicate memory `output/memory.json` |
 | 7 | Guardrails | [pvagent/guardrails.py](pvagent/guardrails.py) + G-* checks (all traced) |
 | 8 | AI governance | [docs/governance.md](docs/governance.md), [config/governance.json](config/governance.json) |
+| - | Define / Design docs | [docs/problem_definition.md](docs/problem_definition.md), [docs/architecture.md](docs/architecture.md) (component + sequence diagrams, guardrail catalogue) |
 | 9 | Human-in-the-loop | [pvagent/hitl.py](pvagent/hitl.py): gate for every non-routine route |
 | 10 | Evaluation | [eval/](eval), [tests/](tests), results in [eval/results.md](eval/results.md) |
-| 11 | Observability | spans, latency, tool calls, errors, est. tokens → `trace.jsonl`, `metrics.json` |
-| 12 | Traceability | `traceability.md`: request → plan → agent → skill → tool → evidence → guardrail → approval → output |
+| 11 | Observability | spans, latency, tool calls, errors, est. tokens → `trace.jsonl`, `metrics.json`; fleet dashboard `/dashboard`, `/api/metrics` |
+| 12 | Traceability | `traceability.md` + machine-readable `traceability.json`: request → plan → agent → skill → tool → evidence → guardrail → approval → output |
 
 ## 4. Quick start
 ```bash
@@ -58,6 +59,14 @@ python -m pvagent run data/cases/case_002.txt --approval ask     # be the human 
 python -m pvagent run data/cases/case_002.txt                    # non-interactive: stays PENDING_APPROVAL
 ```
 Outputs land in `output/runs/<case>/`: `report.md`, `traceability.md`, `trace.jsonl`, `metrics.json`, `state.json`, and `outbox/` (only if released).
+
+### Web UI (human review + observability dashboard)
+```bash
+make serve        # http://127.0.0.1:8000  (PORT/HOST/REVIEWER_TOKEN env vars; see docs/deployment.md)
+```
+Paste a report or load a sample, watch the agents run, then **Approve / Reject** as the human reviewer. `/dashboard` shows
+fleet metrics (outcomes, routes, MCP calls, per-agent/skill/tool avg/p95/max latency, errors, guardrail blocks, est. tokens).
+Deployable via the [Dockerfile](Dockerfile) / [render.yaml](render.yaml): see [docs/deployment.md](docs/deployment.md).
 
 ## 5. Sample cases (`data/cases/`)
 | Case | Scenario | Expected outcome |

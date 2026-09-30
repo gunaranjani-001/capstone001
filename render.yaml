@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: pv-triage
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: REVIEWER_TOKEN
+        generateValue: true   # reviewers must enter this token to approve/reject
+      - key: APPROVAL_TIMEOUT
+        value: "900"

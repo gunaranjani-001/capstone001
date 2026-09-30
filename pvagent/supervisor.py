@@ -24,19 +24,22 @@ class Supervisor:
 
     def process(self, path):
         path = Path(path)
-        raw = path.read_text(encoding="utf-8")
-        run_dir = self.out_dir / "runs" / path.stem
+        return self.process_text(path.read_text(encoding="utf-8"), path.stem, path.name)
+
+    def process_text(self, raw, run_id, source="inline"):
+        """Run the full workflow on report text. `run_id` must be filesystem-safe (it names the run directory)."""
+        run_dir = self.out_dir / "runs" / run_id
         shutil.rmtree(run_dir, ignore_errors=True)
         run_dir.mkdir(parents=True)
 
-        state = RunState(path.stem, hashlib.sha256(raw.encode()).hexdigest())
-        tracer = Tracer(path.stem)
+        state = RunState(run_id, hashlib.sha256(raw.encode()).hexdigest())
+        tracer = Tracer(run_id)
         guard = Guardrails(tracer, self.gov)
         ctx = Context(state, tracer, guard, self.mcp, self.memory, self.rules, self.gov, raw)
 
         tracer.agent, tracer.step = "supervisor", "request"
-        with tracer.span("request", "user_request", source=path.name, sha256=state.request_hash[:16]):
-            state.log("request_received", source=path.name)
+        with tracer.span("request", "user_request", source=source, sha256=state.request_hash[:16]):
+            state.log("request_received", source=source)
         tracer.step = "plan"
         with tracer.span("plan", "initial_plan") as sp:
             state.set_plan(STEPS + TAIL, "initial plan")
@@ -95,7 +98,9 @@ class Supervisor:
             if allowed:
                 outbox = run_dir / "outbox"
                 target = (outbox / f"{st.case_id}_{route['route']}.json").resolve()
-                ctx.guard.check("G-A2 writes-confined-to-run-outbox", str(target).startswith(str(run_dir.resolve())), str(target.name))
+                if not ctx.guard.check("G-A2 writes-confined-to-run-outbox",
+                                       target.is_relative_to(outbox.resolve()), target.name):
+                    raise PermissionError(f"release target escapes outbox: {target}")
                 outbox.mkdir(exist_ok=True)
                 target.write_text(json.dumps(report.submission(st), indent=2), encoding="utf-8")
                 sp["attrs"]["released"] = target.name

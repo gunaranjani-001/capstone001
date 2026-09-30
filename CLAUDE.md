@@ -10,6 +10,7 @@ Synthetic data and fictional drugs only. Training prototype, not for real PV dec
 - `pvagent/agents.py` — 7 sub-agents; they only call skills via `Context.skill()`.
 - `pvagent/skills.py` — all business logic lives in skills (registered with `@skill`).
 - `pvagent/mcp_server.py` / `mcp_client.py` — stdio MCP server exposing READ-ONLY data tools (`meddra_lookup`, `label_lookup`, `case_db_search`).
+- `pvagent/web.py` — stdlib web UI: web reviewer gate (`ExternalHITL`), dashboard (`observability.aggregate`). Reports are processed in memory via `Supervisor.process_text`; never write raw report text to disk.
 - `pvagent/guardrails.py`, `hitl.py`, `observability.py`, `state.py`, `report.py`.
 - `config/business_rules.json` (routes, minimum data), `config/governance.json` (per-agent skill/tool allowlist).
 
@@ -28,7 +29,7 @@ Synthetic data and fictional drugs only. Training prototype, not for real PV dec
 - Never edit `eval/golden.json` to make a failing eval pass — fix the code or ask.
 
 ## Commands
-- `make demo` run all sample cases with a simulated approver; `make eval` evaluation suite; `make test` unit tests.
+- `make serve` web UI; `make demo` run all sample cases with a simulated approver; `make eval` evaluation suite; `make test` unit tests.
 - `python -m pvagent run data/cases/case_002.txt --approval ask` interactive review.
 
 ## Hooks (`.claude/settings.json`)

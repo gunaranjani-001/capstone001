@@ -1,5 +1,6 @@
 """Run state (per case) and long-term memory (across cases, used for duplicate detection)."""
 import json
+import threading
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -50,15 +51,18 @@ class Memory:
 
     def __init__(self, path):
         self.path = Path(path)
+        self._lock = threading.Lock()  # the web app processes cases on several threads
         self.data = {"fingerprints": {}, "cases_processed": 0}
         if self.path.exists():
             self.data = json.loads(self.path.read_text(encoding="utf-8"))
 
     def lookup(self, fp):
-        return self.data["fingerprints"].get(fp)
+        with self._lock:
+            return self.data["fingerprints"].get(fp)
 
     def remember(self, fp, case_id):
-        self.data["fingerprints"].setdefault(fp, {"first_case": case_id})
-        self.data["cases_processed"] += 1
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        self.path.write_text(json.dumps(self.data, indent=2), encoding="utf-8")
+        with self._lock:
+            self.data["fingerprints"].setdefault(fp, {"first_case": case_id})
+            self.data["cases_processed"] += 1
+            self.path.parent.mkdir(parents=True, exist_ok=True)
+            self.path.write_text(json.dumps(self.data, indent=2), encoding="utf-8")

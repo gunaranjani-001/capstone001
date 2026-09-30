@@ -1,4 +1,6 @@
 """Specialised sub-agents. Each reads shared state, invokes its permitted skills, writes results back."""
+import re
+
 from .guardrails import contains_pii
 
 
@@ -12,7 +14,9 @@ def intake_agent(ctx):
                     f"{len(inj['found'])} injected instruction(s) stripped" if inj["found"] else "none detected")
     parsed = ctx.skill("parse_case_report", text=red["text"])
     facts.update(fields=parsed["fields"], complete=parsed["complete"], missing=parsed["missing"])
-    ctx.state.case_id = parsed["fields"].get("case_id") or ctx.state.run_id
+    # case_id comes from untrusted text and later names an outbox file: keep it filesystem-safe
+    safe = re.sub(r"[^A-Za-z0-9_-]", "_", parsed["fields"].get("case_id", ""))[:40].strip("_")
+    ctx.state.case_id = safe or ctx.state.run_id
     return f"complete={parsed['complete']} missing={parsed['missing']}"
 
 

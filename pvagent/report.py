@@ -120,3 +120,6 @@ def write_outputs(st, tracer, run_dir):
     st.save(run_dir)
     (run_dir / "report.md").write_text(render_report(st), encoding="utf-8")
     (run_dir / "traceability.md").write_text(render_traceability(st, tracer), encoding="utf-8")
+    rows = [{**r, "kinds": sorted(r["kinds"])} for r in chain(st, tracer)]
+    (run_dir / "traceability.json").write_text(json.dumps(
+        {"case_id": st.case_id, "status": st.status, "chain_complete": chain_complete(st, tracer), "steps": rows}, indent=2), encoding="utf-8")

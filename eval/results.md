@@ -27,6 +27,6 @@ Cases: 7. Exact-match on all fields: **7/7**
 | zero runtime errors | PASS |
 
 ## Reliability & performance
-- Avg agent latency per case: 4.39 ms
+- Avg agent latency per case: 3.71 ms
 - Total spans traced: 330
 - Guardrail blocks fired (all cases): 1
